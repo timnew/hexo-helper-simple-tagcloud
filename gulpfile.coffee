@@ -25,7 +25,7 @@ gulp.task 'js', ->
   gulp.src paths.source.js
     .pipe gulp.dest paths.dest.lib
 
-gulp.task 'build', ['clean', 'coffee']
+gulp.task 'build', ['clean', 'js']
 
 gulp.task 'default', ['build']
 
@@ -35,4 +35,4 @@ gulp.task 'bump', ['build'], ->
     .pipe gulp.dest(paths.dest.root)
 
 gulp.task 'watch', ['build'], ->
-  gulp.watch paths.source.coffee, ['coffee']
+  gulp.watch paths.source.js, ['js']
