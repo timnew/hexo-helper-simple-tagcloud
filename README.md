@@ -1,7 +1,7 @@
 hexo-helper-simple-tagcloud [![NPM version][npm-image]][npm-url] [![Dependency Status][depstat-image]][depstat-url]
 ================
 
-> A simplified and improved [Hexo] Tag Cloud generator.
+> A forked [Hexo] Tag Cloud generator, but with improvements and fixes.
 
 ## Install
 
