@@ -2,6 +2,21 @@ var _ = {
   extend: require('lodash.assign')
 };
 
+var escapes = [
+  { match: /\s/g, replacement: '&nbsp;' },
+  { match: /</g, replacement: '&lt;' },
+  { match: />/g, replacement: '&gt;' },
+];
+
+function escapeTag(text) {
+  if(text==null)
+    return '';
+
+  return escapes.reduce(function(result, escape){
+    return result.replace(escape.match, escape.replacement);
+  }, text);
+}
+
 function tagClouds(tags, options) {
   if (!options){
     options = tags;
@@ -51,7 +66,7 @@ function tagClouds(tags, options) {
     var index = sizes.indexOf(tag.length),
       size = min + (max - min) / (length - 1) * index;
 
-    result += '<a href="' + self.url_for(tag.path) + '" style="font-size: ' + size.toFixed(2) + unit + ';">' + tag.name.replace(/\s/g, '&nbsp;') + '</a>';
+    result += '<a href="' + self.url_for(tag.path) + '" style="font-size: ' + size.toFixed(2) + unit + ';">' + escapeTag(tag.name) + '</a>';
   });
 
   return result;
