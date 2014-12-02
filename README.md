@@ -23,6 +23,8 @@ Original [Hexo] `tagcloud` generator has some issues or unless feature in it. I'
 
 Install and enjoy. It just work as original `tagcloud` generator, but with the improvements.
 
+**HINT** For Windows user, if your git complains `filename too long` issue, please execute `git config --global core.longpaths true` to fix the issue. Thanks [@heartnn](https://github.com/heartnn) for the issue and solution.
+
 ## License
 MIT
 
