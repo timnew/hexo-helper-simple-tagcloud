@@ -1,3 +1,5 @@
+var Hexo = require('hexo');
+var hexo = new Hexo(process.cwd(), {});
 var _ = {
   extend: require('lodash.assign')
 };
